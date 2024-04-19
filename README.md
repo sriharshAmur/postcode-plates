@@ -1,17 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Postcode Plates
+
+Postcode Plates is a simple project to show a list of restaurants based on a search query of your postcode.
+
+## TODO
+
+- [ ] Host Project on Vercel
+- [ ] Simple Landing Page
+- [ ] Simple Search Page
+- [ ] Layout Switcher (Grid View, List View)
+- [ ] Simple Card Component (for Grid View)
+- [ ] Simple List Component (for List View)
+- [ ] Make a API to fetch data
+- [ ] Search to cell the api and show the data
+- [ ] Reactive Search (maybe store state in URL)
+
+### Nice to have's
+
+- [ ] Dark Mode
+- [ ] Nice Colors
+- [ ] Nice Fonts
+- [ ] Nice Animations
+- [ ] Nice Transitions and Hover Effects
+- [ ] Map View
+- [ ] Filter by (Cuisine, Rating, Price, etc)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
