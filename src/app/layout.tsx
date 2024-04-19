@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Postcode Plates',
-  description: 'Find Restaurants Near You',
+  description: 'The Taste of Your Town, Delivered',
 };
 
 export default function RootLayout({

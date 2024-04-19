@@ -5,7 +5,8 @@
 ## TODO
 
 - [x] Host Project on Vercel
-- [ ] Simple Landing Page
+- [x] Simple Landing Page
+- [ ] Make Search Client Side
 - [ ] Simple Search Page
 - [ ] Layout Switcher (Grid View, List View)
 - [ ] Simple Card Component (for Grid View)
