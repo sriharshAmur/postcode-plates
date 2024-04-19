@@ -1,10 +1,10 @@
 # Postcode Plates
 
-Postcode Plates is a simple project to show a list of restaurants based on a search query of your postcode.
+[Postcode Plates](https://postcode-plates.vercel.app/) is a simple project to show a list of restaurants based on a search query of your postcode.
 
 ## TODO
 
-- [ ] Host Project on Vercel
+- [x] Host Project on Vercel
 - [ ] Simple Landing Page
 - [ ] Simple Search Page
 - [ ] Layout Switcher (Grid View, List View)
