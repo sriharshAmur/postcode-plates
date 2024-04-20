@@ -19,7 +19,7 @@
 - [x] ~~Make a API to fetch data.~~
 - [x] ~~Search to call the api and show the data.~~
 - [x] Reactive Search (maybe store state in URL)
-- [ ] Make Mobile Responsive
+- [x] Make Mobile Responsive
 - [ ] Error Handling when Search is empty. (Provide suggestions as a helper)
 
 ### Nice to have's

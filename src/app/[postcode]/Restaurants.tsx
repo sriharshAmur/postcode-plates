@@ -30,7 +30,7 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
     return (
       <div className='mt-24 w-full md:w-[50vw] text-center flex flex-col items-center mx-auto gap-12 '>
         <div className='font-bold text-red-700'>
-          No restaurants found for postcode <span className='font-extrabold'>'{postcode}'</span>. <br /> Please try
+          No restaurants found for postcode <span className='font-extrabold'>{`"${postcode}"`}</span>. <br /> Please try
           another Postcode.
         </div>
         <Suggestions />
