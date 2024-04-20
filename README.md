@@ -2,6 +2,8 @@
 
 [Postcode Plates](https://postcode-plates.vercel.app/) is a simple project to show a list of restaurants based on a search query of your postcode.
 
+[Inital Design](https://link.excalidraw.com/l/5C6TAP7vUVC/7mpk8r52bGC) was made on [Excalidraw](https://excalidraw.com/).
+
 ## TODO
 
 - [x] Host Project on Vercel

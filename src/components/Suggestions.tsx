@@ -20,7 +20,7 @@ export default function Suggestions() {
         </div>
         <div>Suggested Postcodes</div>
       </div>
-      <div className='w-full grid grid-cols-3 lg:grid-cols-4 gap-8'>
+      <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
         {postcodes.map((postcode) => (
           <Link
             href={getPostcodeUrl(postcode.value)}
