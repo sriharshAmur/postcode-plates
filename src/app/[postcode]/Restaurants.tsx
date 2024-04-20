@@ -8,9 +8,23 @@ import { IoGridOutline } from 'react-icons/io5';
 import { TfiViewList } from 'react-icons/tfi';
 import clsx from 'clsx';
 import Suggestions from '@/components/Suggestions';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
+type ViewType = 'grid' | 'list';
 
 export default function Restaurants({ restaurants, postcode }: { restaurants: Restaurant[]; postcode: string }) {
-  const [viewType, setViewType] = useState('grid');
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const [viewType, setViewType] = useState<ViewType>((searchParams.get('view')?.toString() as ViewType) || 'grid');
+
+  function changeView(view: ViewType) {
+    const params = new URLSearchParams(searchParams);
+    params.set('view', view);
+    replace(`${pathname}?${params.toString()}`);
+    setViewType(view);
+  }
 
   if (!restaurants || restaurants.length === 0)
     return (
@@ -32,14 +46,14 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
             className={clsx('grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2', {
               'bg-gray-300': viewType === 'grid',
             })}
-            onClick={() => setViewType('grid')}>
+            onClick={() => changeView('grid')}>
             <IoGridOutline size={20} />
           </div>
           <div
             className={clsx('grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2', {
               'bg-gray-300': viewType === 'list',
             })}
-            onClick={() => setViewType('list')}>
+            onClick={() => changeView('list')}>
             <TfiViewList size={20} />
           </div>
         </div>

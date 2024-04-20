@@ -1,7 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { FaRegLightbulb } from 'react-icons/fa';
 
 export default function Suggestions() {
+  const searchParams = useSearchParams();
+
+  function getPostcodeUrl(postcode: string) {
+    const params = new URLSearchParams(searchParams);
+    return `/${postcode}?${params.toString()}`;
+  }
+
   return (
     <div className='flex flex-col items-center gap-6'>
       <div className='flex items-center gap-2 bg-red-500 px-4 py-2 w-fit rounded-lg text-white'>
@@ -13,7 +23,7 @@ export default function Suggestions() {
       <div className='w-full grid grid-cols-3 lg:grid-cols-4 gap-8'>
         {postcodes.map((postcode) => (
           <Link
-            href={`/${postcode.value}`}
+            href={getPostcodeUrl(postcode.value)}
             key={postcode.value}>
             <div className='p-2 rounded-lg bg-red-200 hover:bg-red-300 text-center cursor-pointer'>
               {postcode.label}

@@ -1,21 +1,30 @@
 'use client';
 
 import clsx from 'clsx';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 
 export default function Search({ fullWidth = false }) {
+  const { push } = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
 
   const [postcode, setPostcode] = useState('');
 
   function searchPostcode() {
-    if (postcode === '') return;
-    replace(`/${postcode}`);
+    if (postcode === '') {
+      console.error('Postcode is empty');
+      return;
+    }
+
+    if (postcode === pathname.slice(1)) {
+      console.error('Same postcode, no need to search again');
+      setPostcode('');
+      return;
+    }
+    const params = new URLSearchParams(searchParams);
+    push(`/${postcode}?${params.toString()}`);
   }
 
   return (

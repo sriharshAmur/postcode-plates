@@ -6,9 +6,9 @@
 
 - [x] Host Project on Vercel
 - [x] Simple Landing Page
-- [ ] Make Search Client Side
-- [ ] Simple Search Page
-- [ ] Layout Switcher (Grid View, List View)
+- [x] Make Search Client Side
+- [x] Simple Search Page
+- [x] Layout Switcher (Grid View, List View)
 - [x] Simple Card Component (for Grid View)
 - [x] Simple List Component (for List View)
 - [x] Make Layout Switcher Interactive
@@ -18,6 +18,8 @@
 - [x] ~~Make a API to fetch data.~~
 - [x] ~~Search to call the api and show the data.~~
 - [x] Reactive Search (maybe store state in URL)
+- [ ] Make Mobile Responsive
+- [ ] Error Handling when Search is empty. (Provide suggestions as a helper)
 
 ### Nice to have's
 
