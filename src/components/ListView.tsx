@@ -6,8 +6,8 @@ import { Restaurant } from '@/@types/restaurant';
 
 export default function ListView({ restaurant }: { restaurant: Restaurant }) {
   return (
-    <div className='flex border border-black rounded-lg'>
-      <div className='min-w-[250px] aspect-auto w-[10vw] min-h-[150px] box-border m-1 relative'>
+    <div className='flex flex-col md:flex-row border border-black rounded-lg'>
+      <div className='min-w-[250px] aspect-auto md:w-[10vw] min-h-[200px] md:min-h-[150px] box-border m-1 relative'>
         <Image
           src='/food/1.jpg'
           alt={restaurant.name}

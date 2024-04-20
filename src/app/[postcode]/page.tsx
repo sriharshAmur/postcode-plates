@@ -19,7 +19,7 @@ const searchRestaurantsByPostcode = async (postcode: string): Promise<Restaurant
 };
 
 export default async function Postcode({ params }: { params: { postcode: string } }) {
-  const restaurants = await searchRestaurantsByPostcode(params.postcode);
+  // const restaurants = await searchRestaurantsByPostcode(params.postcode);
 
   return (
     <Restaurants

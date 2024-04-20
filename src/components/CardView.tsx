@@ -49,7 +49,7 @@ export default function CardView({ restaurant }: { restaurant: Restaurant }) {
             <FaLocationDot size={20} />
           </div>
           <div>
-            {restaurant.address.firstLine}, {restaurant.address.city}, {restaurant.address.postalCode}
+            {restaurant.address.firstLine}, {restaurant.address.city} - {restaurant.address.postalCode}
           </div>
         </div>
       </div>

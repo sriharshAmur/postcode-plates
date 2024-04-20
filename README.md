@@ -12,8 +12,7 @@
 - [x] Simple Card Component (for Grid View)
 - [x] Simple List Component (for List View)
 - [x] Make Layout Switcher Interactive
-- [ ] Store Layout Switcher State in URL
-- [ ] Make Sort By
+- [x] Store Layout Switcher State in URL
 - [ ] Use Different Images for Restaurants
 - [x] ~~Make a API to fetch data.~~
 - [x] ~~Search to call the api and show the data.~~
@@ -30,6 +29,7 @@
 - [ ] Nice Transitions and Hover Effects
 - [ ] Map View
 - [ ] Filter by (Cuisine, Rating, Price, etc)
+- [ ] Make Sort By
 
 ## Getting Started
 

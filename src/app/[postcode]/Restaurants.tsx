@@ -61,7 +61,7 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
       <div
         className={clsx('grid gap-4 items-stretch', {
           'grid-cols-1': viewType === 'list',
-          'grid-cols-3': viewType === 'grid',
+          'grid-cols-1 md:grid-cols-2 lg:grid-cols-3': viewType === 'grid',
         })}>
         {restaurants.map((r) =>
           viewType === 'grid' ? (
