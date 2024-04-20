@@ -1,6 +1,7 @@
 import Search from '@/components/Search';
 import Suggestions from '@/components/Suggestions';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
@@ -17,8 +18,10 @@ export default function Home() {
       </div>
       <div className='flex-1 grid place-items-center'>
         <div className='flex flex-col gap-12 items-center md:min-w-96 max-w-[800px] w-full md:w-[50vw]'>
-          <Search fullWidth />
-          <Suggestions />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Search fullWidth />
+            <Suggestions />
+          </Suspense>
         </div>
       </div>
     </main>

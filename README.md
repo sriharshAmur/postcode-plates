@@ -21,6 +21,7 @@
 - [x] Reactive Search (maybe store state in URL)
 - [x] Make Mobile Responsive
 - [ ] Error Handling when Search is empty. (Provide suggestions as a helper)
+- [ ] Add loading skeletons for better UX
 
 ### Nice to have's
 

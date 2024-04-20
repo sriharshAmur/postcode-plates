@@ -1,6 +1,7 @@
 import Search from '@/components/Search';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function RootLayout({
   children,
@@ -22,7 +23,9 @@ export default function RootLayout({
           <h1 className='hidden md:block font-bold text-2xl '>Postcode Plates</h1>
         </Link>
         <div className='flex-1'>
-          <Search />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Search />
+          </Suspense>
         </div>
         <div className='flex-1 invisible '></div>
       </div>
