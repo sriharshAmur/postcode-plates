@@ -11,10 +11,13 @@
 - [ ] Layout Switcher (Grid View, List View)
 - [x] Simple Card Component (for Grid View)
 - [x] Simple List Component (for List View)
-- [ ] Make Layout Switcher Interactive
-- [ ] Make a API to fetch data
-- [ ] Search to call the api and show the data
-- [ ] Reactive Search (maybe store state in URL)
+- [x] Make Layout Switcher Interactive
+- [ ] Store Layout Switcher State in URL
+- [ ] Make Sort By
+- [ ] Use Different Images for Restaurants
+- [x] ~~Make a API to fetch data.~~
+- [x] ~~Search to call the api and show the data.~~
+- [x] Reactive Search (maybe store state in URL)
 
 ### Nice to have's
 

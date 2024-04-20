@@ -1,35 +1,31 @@
-import CardView from '@/components/CardView';
-import ListView from '@/components/ListView';
-import { IoGridOutline } from 'react-icons/io5';
-import { TfiViewList } from 'react-icons/tfi';
+import { Restaurant } from '@/@types/restaurant';
+import Restaurants from './Restaurants';
 
-export default function Postcode({ params }: { params: { postcode: string } }) {
+const searchRestaurantsByPostcode = async (postcode: string): Promise<Restaurant[]> => {
+  try {
+    const url = `https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const restaurants: Restaurant[] = data.restaurants;
+
+    if (!restaurants) return [];
+
+    const limitedRestaurants = restaurants.slice(0, 10);
+    return limitedRestaurants;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+export default async function Postcode({ params }: { params: { postcode: string } }) {
+  const restaurants = await searchRestaurantsByPostcode(params.postcode);
+
   return (
-    <main className='flex flex-col gap-12'>
-      <div className='text-center'>
-        Showing <span className='font-bold'>10</span> Results for <span className='font-bold'>{params.postcode}</span>.
-      </div>
-
-      <div className='flex flex-col gap-1'>
-        <div className='flex items-center justify-end gap-1'>
-          <div className='grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2'>
-            <IoGridOutline size={20} />
-          </div>
-          <div className='grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2'>
-            <TfiViewList size={20} />
-          </div>
-        </div>
-        <div className='border border-black' />
-        <div className='grid grid-cols-3 py-8 gap-4'>
-          {restaurants.map((r) => (
-            <div key={r.id}>
-              {/* <ListView restaurant={r} /> */}
-              <CardView restaurant={r} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </main>
+    <Restaurants
+      postcode={params.postcode}
+      restaurants={restaurants}
+    />
   );
 }
 

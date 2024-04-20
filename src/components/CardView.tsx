@@ -2,24 +2,7 @@ import Image from 'next/image';
 import { FaStar } from 'react-icons/fa6';
 import { PiBowlFoodFill } from 'react-icons/pi';
 import { FaLocationDot } from 'react-icons/fa6';
-
-type Restaurant = {
-  id: string;
-  name: string;
-  rating: {
-    starRating: number;
-    count: number;
-  };
-  address: {
-    firstLine: string;
-    city: string;
-    postalCode: string;
-  };
-  cuisines: {
-    name: string;
-  }[];
-  logoUrl: string;
-};
+import { Restaurant } from '@/@types/restaurant';
 
 export default function CardView({ restaurant }: { restaurant: Restaurant }) {
   return (

@@ -35,7 +35,9 @@ export default function Search({ fullWidth = false }) {
         onChange={(e) => setPostcode(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && searchPostcode()}
       />
-      <div className='grid place-items-center p-2 mr-2 cursor-pointer border-black rounded-lg hover:bg-gray-300 '>
+      <div
+        onClick={searchPostcode}
+        className='grid place-items-center p-2 mr-2 cursor-pointer border-black rounded-lg hover:bg-gray-300 '>
         <CiSearch
           size={28}
           color='black'
