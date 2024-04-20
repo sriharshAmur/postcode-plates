@@ -20,11 +20,11 @@ export default function Postcode({ params }: { params: { postcode: string } }) {
           </div>
         </div>
         <div className='border border-black' />
-        <div className='grid grid-cols-1 py-8 gap-4'>
+        <div className='grid grid-cols-3 py-8 gap-4'>
           {restaurants.map((r) => (
             <div key={r.id}>
-              <ListView restaurant={r} />
-              {/* <CardView restaurant={r} /> */}
+              {/* <ListView restaurant={r} /> */}
+              <CardView restaurant={r} />
             </div>
           ))}
         </div>

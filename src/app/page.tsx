@@ -1,3 +1,4 @@
+import Search from '@/components/Search';
 import Link from 'next/link';
 import { CiSearch } from 'react-icons/ci';
 import { FaRegLightbulb } from 'react-icons/fa';
@@ -11,19 +12,7 @@ export default function Home() {
       </div>
       <div className='flex-1 grid place-items-center'>
         <div className='flex flex-col gap-12 items-center min-w-96 max-w-[800px] w-[50vw]'>
-          <div className='flex items-center justify-between gap-2 border border-black p-1 rounded-lg w-full'>
-            <input
-              className='flex-1 py-3 pl-4 bg-transparent outline-none text-lg'
-              type='text'
-              placeholder='Search for your postcode...'
-            />
-            <div className='grid place-items-center p-1 pr-2 border-black rounded-lg '>
-              <CiSearch
-                size={28}
-                color='black'
-              />
-            </div>
-          </div>
+          <Search fullWidth />
           <div className='flex flex-col items-center gap-6'>
             <div className='flex items-center gap-2 bg-red-500 px-4 py-2 w-fit rounded-lg text-white'>
               <div className='grid place-items-center'>
