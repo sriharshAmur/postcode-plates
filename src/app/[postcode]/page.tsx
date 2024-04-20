@@ -23,24 +23,6 @@ export default function Postcode({ params }: { params: { postcode: string } }) {
           {restaurants.map((r) => (
             <div key={r.id}>
               <CardView restaurant={r} />
-              {/* <img
-                src={restaurant.logoUrl}
-                alt={restaurant.name}
-              />
-              <h2>{restaurant.name}</h2>
-              <p>
-                {restaurant.address.firstLine}, {restaurant.address.city}, {restaurant.address.postalCode}
-              </p>
-              <p>
-                {restaurant.rating.starRating} ({restaurant.rating.count})
-              </p>
-              <p>{restaurant.cuisines.map((cuisine) => cuisine.name).join(', ')}</p>
-              <p>
-                {restaurant.deliveryEtaMinutes.rangeLower} - {restaurant.deliveryEtaMinutes.rangeUpper} mins
-              </p>
-              <p>£{restaurant.minimumDeliveryValue} minimum</p>
-              <p>£{restaurant.deliveryCost} delivery</p>
-              <p>{restaurant.deals.map((deal) => deal.description).join(', ')}</p> */}
             </div>
           ))}
         </div>

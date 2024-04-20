@@ -24,7 +24,7 @@ type Restaurant = {
 export default function CardView({ restaurant }: { restaurant: Restaurant }) {
   return (
     <div className='flex flex-col border border-black rounded-lg'>
-      <div className=' box-border m-1 min-h-[200px] relative '>
+      <div className=' box-border m-1 min-h-[200px] relative'>
         <Image
           src='/food/1.jpg'
           alt={restaurant.name}
