@@ -9,7 +9,7 @@
 - [ ] Make Search Client Side
 - [ ] Simple Search Page
 - [ ] Layout Switcher (Grid View, List View)
-- [ ] Simple Card Component (for Grid View)
+- [x] Simple Card Component (for Grid View)
 - [ ] Simple List Component (for List View)
 - [ ] Make a API to fetch data
 - [ ] Search to cell the api and show the data
