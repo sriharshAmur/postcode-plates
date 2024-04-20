@@ -10,9 +10,10 @@
 - [ ] Simple Search Page
 - [ ] Layout Switcher (Grid View, List View)
 - [x] Simple Card Component (for Grid View)
-- [ ] Simple List Component (for List View)
+- [x] Simple List Component (for List View)
+- [ ] Make Layout Switcher Interactive
 - [ ] Make a API to fetch data
-- [ ] Search to cell the api and show the data
+- [ ] Search to call the api and show the data
 - [ ] Reactive Search (maybe store state in URL)
 
 ### Nice to have's
