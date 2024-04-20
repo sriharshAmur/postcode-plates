@@ -4,7 +4,7 @@ import { FaRegLightbulb } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <main className='flex flex-col gap-8 w-full h-full p-4 lg:p-12 container mx-auto'>
+    <main className='flex flex-col gap-8 w-full flex-1 p-4 lg:p-12 container mx-auto'>
       <div className='flex flex-col items-center gap-4'>
         <h1 className='font-bold text-4xl'>Postcode Plates</h1>
         <p className='text-xl'>The Taste of Your Town, Delivered</p>
