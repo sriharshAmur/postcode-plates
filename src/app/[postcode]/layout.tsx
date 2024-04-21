@@ -24,7 +24,7 @@ export default function RootLayout({
             <h1 className='font-raleway hidden md:block font-bold text-2xl '>Postcode Plates</h1>
           </Link>
         </div>
-        <div className='flex-1'>
+        <div className='flex-1 w-full md:w-fit'>
           <Suspense fallback={<div>Loading...</div>}>
             <Search />
           </Suspense>
