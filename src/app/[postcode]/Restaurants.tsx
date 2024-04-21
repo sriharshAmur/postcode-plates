@@ -66,16 +66,18 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
           'grid-cols-1': viewType === 'list',
           'grid-cols-1 md:grid-cols-2 lg:grid-cols-3': viewType === 'grid',
         })}>
-        {restaurants.map((r) =>
+        {restaurants.map((r, index) =>
           viewType === 'grid' ? (
             <CardView
               key={r.id}
               restaurant={r}
+              rowIndex={index + 1}
             />
           ) : (
             <ListView
               key={r.id}
               restaurant={r}
+              rowIndex={index + 1}
             />
           )
         )}

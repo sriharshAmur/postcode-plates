@@ -4,19 +4,17 @@ import { PiBowlFoodFill } from 'react-icons/pi';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Restaurant } from '@/@types/restaurant';
 
-export default function CardView({ restaurant }: { restaurant: Restaurant }) {
+export default function CardView({ restaurant, rowIndex }: { restaurant: Restaurant; rowIndex: number }) {
   return (
     <div className='flex flex-col border border-black rounded-lg'>
       <div className=' box-border m-1 min-h-[200px] relative'>
         <Image
-          src='/food/1.jpg'
+          src={`/food/${rowIndex}.jpg`}
           alt={restaurant.name}
           fill={true}
-          layout='fill'
-          objectFit='cover'
-          className='aspect-square'
+          className='aspect-square object-cover'
         />
-        <div className='w-12 h-12 absolute bottom-2 left-2'>
+        <div className='w-16 h-16 absolute bottom-2 left-2'>
           <Image
             src={restaurant.logoUrl}
             alt={restaurant.name}

@@ -15,13 +15,14 @@
 - [x] Simple List Component (for List View)
 - [x] Make Layout Switcher Interactive
 - [x] Store Layout Switcher State in URL
-- [ ] Use Different Images for Restaurants
+- [x] Use Different Images for Restaurants
 - [x] ~~Make a API to fetch data.~~
 - [x] ~~Search to call the api and show the data.~~
 - [x] Reactive Search (maybe store state in URL)
 - [x] Make Mobile Responsive
-- [ ] Error Handling when Search is empty. (Provide suggestions as a helper)
+- [x] Error Handling when Search is empty. (Provide suggestions as a helper)
 - [ ] Add loading skeletons for better UX
+- [ ] Make both the views into one
 
 ### Nice to have's
 
