@@ -55,7 +55,7 @@ export default function Search({ fullWidth = false }) {
         <input
           className='py-3 pl-4 flex-1 bg-transparent outline-none text-lg'
           type='text'
-          placeholder='Search for your postcode...'
+          placeholder='Search for your postcode'
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && searchPostcode()}

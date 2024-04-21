@@ -26,9 +26,9 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
 
   return (
     <div className='flex flex-col gap-8'>
-      <div className='flex items-center md:items-end justify-between  pb-2 border-b border-black'>
+      <div className='flex items-end md:items-end justify-between pb-2 border-b border-black'>
         <div className='flex-1 hidden md:block invisible'></div>
-        <div className='flex-1 md:text-center'>
+        <div className='flex-1 md:text-center '>
           Showing <span className='font-bold  text-orange-500'>#10</span> Results for{' '}
           <span className='font-bold font-comfortaa text-orange-500'>{postcode}.</span>
         </div>

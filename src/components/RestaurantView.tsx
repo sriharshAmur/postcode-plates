@@ -36,7 +36,7 @@ export default function RestaurantView({
             'md:rounded-l-lg rounded-t-none': view === 'list',
           })}
         />
-        <div className='w-16 h-16 absolute bottom-2 left-2'>
+        <div className='w-16 h-16 absolute bottom-2 left-2 rounded'>
           <Image
             src={restaurant.logoUrl}
             alt={restaurant.name}
@@ -53,7 +53,7 @@ export default function RestaurantView({
         })}>
         <div className='flex items-start justify-between gap-2 mb-4'>
           <h2 className='font-josefin_sans text-xl font-bold'>{restaurant.name}</h2>
-          <div className='flex items-center gap-1'>
+          <div className='flex items-center gap-1 text-orange-500'>
             <div className='grid place-items-center'>
               <FaStar />
             </div>
