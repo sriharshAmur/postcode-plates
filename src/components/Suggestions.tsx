@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { FaRegLightbulb } from 'react-icons/fa';
@@ -14,42 +15,74 @@ export default function Suggestions({ mini = false }: { mini?: boolean }) {
 
   if (mini) {
     return (
-      <div className='flex items-center gap-4 text-sm'>
+      <div className='flex items-center gap-4 text-sm py-1'>
         {postcodes.map((postcode) => (
-          <Link
-            href={getPostcodeUrl(postcode.value)}
-            key={postcode.value}>
-            <div className='p-1 rounded-lg bg-red-200 hover:bg-red-300 text-center cursor-pointer w-20'>
-              {postcode.label}
-            </div>
-          </Link>
+          <Suggestion
+            postcode={postcode}
+            key={postcode.value}
+            getPostcodeUrl={getPostcodeUrl}
+            mini
+          />
         ))}
       </div>
     );
   }
 
   return (
-    <div className='flex flex-col items-center gap-6'>
-      <div className='flex items-center gap-2 bg-red-500 px-4 py-2 w-fit rounded-lg text-white'>
-        <div className='grid place-items-center'>
+    <div className='flex flex-col w-full items-center gap-6 bg-zinc-100 p-4 md:px-8 border border-orange-500 rounded-lg '>
+      <div className='flex items-center gap-2 text-zinc-800  px-4 py-2 w-fit rounded-lg'>
+        <div className='grid place-items-center '>
           <FaRegLightbulb />
         </div>
         <div>Suggested Postcodes</div>
       </div>
-      <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+      <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 '>
         {postcodes.map((postcode) => (
-          <Link
-            href={getPostcodeUrl(postcode.value)}
-            key={postcode.value}>
-            <div className='p-2 rounded-lg bg-red-200 hover:bg-red-300 text-center cursor-pointer'>
-              {postcode.label}
-            </div>
-          </Link>
+          <Suggestion
+            postcode={postcode}
+            key={postcode.value}
+            getPostcodeUrl={getPostcodeUrl}
+          />
         ))}
       </div>
     </div>
   );
 }
+
+const PostcodeType = {
+  label: 'string',
+  value: 'string',
+};
+
+const Suggestion = ({
+  postcode,
+  getPostcodeUrl,
+  mini = false,
+}: {
+  postcode: typeof PostcodeType;
+  getPostcodeUrl: (postcode: string) => string;
+  mini?: boolean;
+}) => (
+  <Link
+    href={getPostcodeUrl(postcode.value)}
+    key={postcode.value}>
+    <div
+      onClick={(e) => {
+        console.log('clikc lcikc lcick');
+
+        e.stopPropagation();
+      }}
+      className={clsx(
+        'p-1 text-zinc-700 text-sm rounded border border-zinc-500 hover:border-orange-500 hover:bg-orange-500 hover:text-white text-center cursor-pointer',
+
+        {
+          'w-20': mini,
+        }
+      )}>
+      {postcode.label}
+    </div>
+  </Link>
+);
 
 const postcodes = [
   {

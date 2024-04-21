@@ -26,8 +26,9 @@
 ### Nice to have's
 
 - [ ] Dark Mode
-- [ ] Nice Colors
-- [ ] Nice Fonts
+- [x] Nice Colors
+- [x] Nice Fonts
+- [ ] Nice Icons
 - [ ] Nice Animations
 - [ ] Nice Transitions and Hover Effects
 - [ ] Map View

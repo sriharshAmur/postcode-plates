@@ -41,13 +41,13 @@ export default function Search({ fullWidth = false }) {
 
   return (
     <div
-      className={clsx('box-border flex flex-col overflow-hidden min-w-96 max-w-[800px]', {
+      className={clsx('box-border flex flex-col overflow-hidden min-w-96 max-w-[500px]', {
         'w-[50vw]': fullWidth,
         'w-[30vw]': !fullWidth,
       })}>
       <div
         className={clsx('flex items-center justify-between gap-2  p-1 w-full', {
-          'rounded-lg border-black border': !error,
+          'rounded-lg border-orange-500 border': !error,
           'rounded-t-lg border-t border-l border-r': error || showSuggestions,
           'rounded-b-none border-b-0': showSuggestions,
           'border-red-300': error,
@@ -60,23 +60,22 @@ export default function Search({ fullWidth = false }) {
           onChange={(e) => setPostcode(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && searchPostcode()}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
         />
         <div
           onClick={searchPostcode}
-          className='grid place-items-center p-2 mr-2 cursor-pointer border-black rounded-lg hover:bg-gray-300 '>
-          <CiSearch
-            size={28}
-            color='black'
-          />
+          className={clsx(
+            'grid place-items-center p-2 mr-2 cursor-pointer bg-orange-500 text-white hover:bg-orange-600 border-black rounded-lg  ',
+            {}
+          )}>
+          <CiSearch size={28} />
         </div>
       </div>
-
       <div className='relative'>
         {error !== '' ? (
           <div className='text-red-700 bg-red-200 px-1 w-full py-1 rounded-b-lg'>{error}</div>
         ) : showSuggestions ? (
-          <div className='border border-black p-1 rounded-b-lg'>
+          <div className='border border-orange-500 p-1 rounded-b-lg'>
             <div className='overflow-auto'>
               <Suggestions mini />
             </div>

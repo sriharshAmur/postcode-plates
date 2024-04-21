@@ -13,8 +13,8 @@ export default function Home() {
           width={80}
           height={80}
         />
-        <h1 className='font-bold text-4xl'>Postcode Plates</h1>
-        <p className='text-xl'>The Taste of Your Town, Delivered</p>
+        <h1 className='font-raleway font-bold text-4xl'>Postcode Plates</h1>
+        <p className='font-caveat text-2xl text-orange-500'>The Taste of Your Town, Delivered</p>
       </div>
       <div className='flex-1 grid place-items-center'>
         <div className='flex flex-col gap-12 items-center md:min-w-96 max-w-[800px] w-full md:w-[50vw]'>

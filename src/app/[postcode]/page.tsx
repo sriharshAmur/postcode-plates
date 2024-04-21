@@ -26,8 +26,8 @@ export default async function Postcode({ params }: { params: { postcode: string 
     return (
       <div className='mt-24 w-full md:w-[50vw] text-center flex flex-col items-center mx-auto gap-12 '>
         <div className='font-bold text-red-700'>
-          No restaurants found for postcode <span className='font-extrabold'>{`"${params.postcode}"`}</span>. <br />{' '}
-          Please try another Postcode.
+          No restaurants found for <span className='font-extrabold'>{`"${params.postcode}"`}</span>. <br /> Please try
+          another Postcode.
         </div>
         <Suggestions />
       </div>

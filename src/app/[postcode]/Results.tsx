@@ -29,19 +29,20 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
       <div className='flex items-center md:items-end justify-between  pb-2 border-b border-black'>
         <div className='flex-1 hidden md:block invisible'></div>
         <div className='flex-1 md:text-center'>
-          Showing <span className='font-bold'>10</span> Results for <span className='font-bold'>{postcode}</span>.
+          Showing <span className='font-bold  text-orange-500'>#10</span> Results for{' '}
+          <span className='font-bold font-comfortaa text-orange-500'>{postcode}.</span>
         </div>
         <div className='md:flex-1 flex items-center justify-end gap-1'>
           <div
-            className={clsx('grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2', {
-              'bg-gray-300': viewType === 'grid',
+            className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
+              'bg-orange-500 text-white hover:bg-orange-500': viewType === 'grid',
             })}
             onClick={() => changeView('grid')}>
             <IoGridOutline size={20} />
           </div>
           <div
-            className={clsx('grid place-items-center cursor-pointer hover:bg-gray-300 rounded-lg p-2', {
-              'bg-gray-300': viewType === 'list',
+            className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
+              'bg-orange-500 text-white hover:bg-orange-500': viewType === 'list',
             })}
             onClick={() => changeView('list')}>
             <TfiViewList size={20} />

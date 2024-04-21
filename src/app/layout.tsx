@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Raleway, Montserrat, Caveat, Josefin_Sans, Comfortaa } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const raleway = Raleway({ subsets: ['latin'], display: 'swap', variable: '--font-raleway' });
+const montserrat = Montserrat({ subsets: ['latin'], display: 'swap', variable: '--font-montserrat' });
+const caveat = Caveat({ subsets: ['latin'], display: 'swap', variable: '--font-caveat' });
+const josefin_sans = Josefin_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-josefin-sans' });
+const comfortaa = Comfortaa({ subsets: ['latin'], display: 'swap', variable: '--font-comfortaa' });
 
 export const metadata: Metadata = {
   title: 'Postcode Plates',
@@ -15,9 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <div className='bg-gray-200 w-full h-full min-h-screen flex flex-col'>{children}</div>
+    <html
+      lang='en'
+      className={` ${caveat.variable} ${raleway.variable} ${montserrat.variable} ${josefin_sans.variable} ${comfortaa.variable} `}>
+      <body className='font-montserrat'>
+        <div className='w-full h-full min-h-screen flex flex-col bg-zinc-50'>{children}</div>
       </body>
     </html>
   );
