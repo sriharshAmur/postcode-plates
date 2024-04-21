@@ -37,6 +37,8 @@ export default function Search({ fullWidth = false }) {
     push(`/${postcode}?${params.toString()}`);
   }
 
+  const showSuggestions = isFocused && !fullWidth;
+
   return (
     <div
       className={clsx('box-border flex flex-col overflow-hidden min-w-96 max-w-[800px]', {
@@ -46,7 +48,9 @@ export default function Search({ fullWidth = false }) {
       <div
         className={clsx('flex items-center justify-between gap-2  p-1 w-full', {
           'rounded-lg border-black border': !error,
-          'rounded-t-lg border-red-300  border-t border-l border-r': error,
+          'rounded-t-lg border-t border-l border-r': error || showSuggestions,
+          'rounded-b-none border-b-0': showSuggestions,
+          'border-red-300': error,
         })}>
         <input
           className='py-3 pl-4 flex-1 bg-transparent outline-none text-lg'
@@ -68,16 +72,17 @@ export default function Search({ fullWidth = false }) {
         </div>
       </div>
 
-      {error !== '' ? (
-        <div className='text-red-700 bg-red-200 px-1 w-full py-1 rounded-b-lg'>{error}</div>
-      ) : isFocused && !fullWidth ? (
-        <div className='p-1 my-1 border border-gray-400 rounded-lg'>
-          <div className='text-center italic pb-1'>Suggestions</div>
-          <div className='overflow-auto '>
-            <Suggestions mini />
+      <div className='relative'>
+        {error !== '' ? (
+          <div className='text-red-700 bg-red-200 px-1 w-full py-1 rounded-b-lg'>{error}</div>
+        ) : showSuggestions ? (
+          <div className='border border-black p-1 rounded-b-lg'>
+            <div className='overflow-auto'>
+              <Suggestions mini />
+            </div>
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </div>
   );
 }
