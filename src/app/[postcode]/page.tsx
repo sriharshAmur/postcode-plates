@@ -1,5 +1,6 @@
 import { Restaurant } from '@/@types/restaurant';
-import Restaurants from './Restaurants';
+import Results from './Results';
+import Suggestions from '@/components/Suggestions';
 
 const searchRestaurantsByPostcode = async (postcode: string): Promise<Restaurant[]> => {
   try {
@@ -21,8 +22,19 @@ const searchRestaurantsByPostcode = async (postcode: string): Promise<Restaurant
 export default async function Postcode({ params }: { params: { postcode: string } }) {
   const restaurants = await searchRestaurantsByPostcode(params.postcode);
 
+  if (!restaurants || restaurants.length === 0)
+    return (
+      <div className='mt-24 w-full md:w-[50vw] text-center flex flex-col items-center mx-auto gap-12 '>
+        <div className='font-bold text-red-700'>
+          No restaurants found for postcode <span className='font-extrabold'>{`"${params.postcode}"`}</span>. <br />{' '}
+          Please try another Postcode.
+        </div>
+        <Suggestions />
+      </div>
+    );
+
   return (
-    <Restaurants
+    <Results
       postcode={params.postcode}
       restaurants={restaurants}
     />

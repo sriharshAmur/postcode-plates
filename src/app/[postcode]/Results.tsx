@@ -2,15 +2,13 @@
 
 import { Restaurant } from '@/@types/restaurant';
 import { useState } from 'react';
-import CardView from '@/components/CardView';
-import ListView from '@/components/ListView';
 import { IoGridOutline } from 'react-icons/io5';
 import { TfiViewList } from 'react-icons/tfi';
 import clsx from 'clsx';
-import Suggestions from '@/components/Suggestions';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import RestaurantView from '@/components/RestaurantView';
 
-type ViewType = 'grid' | 'list';
+export type ViewType = 'grid' | 'list';
 
 export default function Restaurants({ restaurants, postcode }: { restaurants: Restaurant[]; postcode: string }) {
   const searchParams = useSearchParams();
@@ -25,17 +23,6 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
     replace(`${pathname}?${params.toString()}`);
     setViewType(view);
   }
-
-  if (!restaurants || restaurants.length === 0)
-    return (
-      <div className='mt-24 w-full md:w-[50vw] text-center flex flex-col items-center mx-auto gap-12 '>
-        <div className='font-bold text-red-700'>
-          No restaurants found for postcode <span className='font-extrabold'>{`"${postcode}"`}</span>. <br /> Please try
-          another Postcode.
-        </div>
-        <Suggestions />
-      </div>
-    );
 
   return (
     <div className='flex flex-col gap-8'>
@@ -66,21 +53,14 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
           'grid-cols-1': viewType === 'list',
           'grid-cols-1 md:grid-cols-2 lg:grid-cols-3': viewType === 'grid',
         })}>
-        {restaurants.map((r, index) =>
-          viewType === 'grid' ? (
-            <CardView
-              key={r.id}
-              restaurant={r}
-              rowIndex={index + 1}
-            />
-          ) : (
-            <ListView
-              key={r.id}
-              restaurant={r}
-              rowIndex={index + 1}
-            />
-          )
-        )}
+        {restaurants.map((r, index) => (
+          <RestaurantView
+            key={r.id}
+            restaurant={r}
+            rowIndex={index + 1}
+            view={viewType}
+          />
+        ))}
       </div>
     </div>
   );

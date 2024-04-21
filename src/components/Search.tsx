@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import { MiniSuggestion } from './Suggestions';
+import Suggestions from './Suggestions';
 
 export default function Search({ fullWidth = false }) {
   const { push } = useRouter();
@@ -74,7 +74,7 @@ export default function Search({ fullWidth = false }) {
         <div className='p-1 my-1 border border-gray-400 rounded-lg'>
           <div className='text-center italic pb-1'>Suggestions</div>
           <div className='overflow-auto '>
-            <MiniSuggestion />
+            <Suggestions mini />
           </div>
         </div>
       ) : null}

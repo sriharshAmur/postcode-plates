@@ -4,12 +4,28 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { FaRegLightbulb } from 'react-icons/fa';
 
-export default function Suggestions() {
+export default function Suggestions({ mini = false }: { mini?: boolean }) {
   const searchParams = useSearchParams();
 
   function getPostcodeUrl(postcode: string) {
     const params = new URLSearchParams(searchParams);
     return `/${postcode}?${params.toString()}`;
+  }
+
+  if (mini) {
+    return (
+      <div className='flex items-center gap-4 text-sm'>
+        {postcodes.map((postcode) => (
+          <Link
+            href={getPostcodeUrl(postcode.value)}
+            key={postcode.value}>
+            <div className='p-1 rounded-lg bg-red-200 hover:bg-red-300 text-center cursor-pointer w-20'>
+              {postcode.label}
+            </div>
+          </Link>
+        ))}
+      </div>
+    );
   }
 
   return (
@@ -31,29 +47,6 @@ export default function Suggestions() {
           </Link>
         ))}
       </div>
-    </div>
-  );
-}
-
-export function MiniSuggestion() {
-  const searchParams = useSearchParams();
-
-  function getPostcodeUrl(postcode: string) {
-    const params = new URLSearchParams(searchParams);
-    return `/${postcode}?${params.toString()}`;
-  }
-
-  return (
-    <div className='flex items-center gap-4 text-sm'>
-      {postcodes.map((postcode) => (
-        <Link
-          href={getPostcodeUrl(postcode.value)}
-          key={postcode.value}>
-          <div className='p-1 rounded-lg bg-red-200 hover:bg-red-300 text-center cursor-pointer w-20'>
-            {postcode.label}
-          </div>
-        </Link>
-      ))}
     </div>
   );
 }

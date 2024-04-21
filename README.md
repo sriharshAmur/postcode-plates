@@ -21,8 +21,7 @@
 - [x] Reactive Search (maybe store state in URL)
 - [x] Make Mobile Responsive
 - [x] Error Handling when Search is empty. (Provide suggestions as a helper)
-- [ ] Add loading skeletons for better UX
-- [ ] Make both the views into one
+- [x] Make both the views into one
 
 ### Nice to have's
 
@@ -34,6 +33,7 @@
 - [ ] Map View
 - [ ] Filter by (Cuisine, Rating, Price, etc)
 - [ ] Make Sort By
+- [ ] Add loading skeletons for better UX
 
 ## Getting Started
 
