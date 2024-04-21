@@ -7,12 +7,12 @@ import { Restaurant } from '@/@types/restaurant';
 export default function CardView({ restaurant, rowIndex }: { restaurant: Restaurant; rowIndex: number }) {
   return (
     <div className='flex flex-col border border-black rounded-lg'>
-      <div className=' box-border m-1 min-h-[200px] relative'>
+      <div className=' box-border  min-h-[200px] relative'>
         <Image
           src={`/food/${rowIndex}.jpg`}
           alt={restaurant.name}
           fill={true}
-          className='aspect-square object-cover'
+          className='aspect-square object-cover rounded-t-lg'
         />
         <div className='w-16 h-16 absolute bottom-2 left-2'>
           <Image

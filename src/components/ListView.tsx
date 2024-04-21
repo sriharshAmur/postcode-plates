@@ -7,14 +7,14 @@ import { Restaurant } from '@/@types/restaurant';
 export default function ListView({ restaurant, rowIndex }: { restaurant: Restaurant; rowIndex: number }) {
   return (
     <div className='flex flex-col md:flex-row border border-black rounded-lg'>
-      <div className='min-w-[250px] aspect-auto md:w-[10vw] min-h-[200px] md:min-h-[150px] box-border m-1 relative'>
+      <div className='min-w-[250px] aspect-auto md:w-[10vw] min-h-[200px] md:min-h-[150px] box-border relative'>
         <Image
           src={`/food/${rowIndex}.jpg`}
           alt={restaurant.name}
           fill={true}
           layout='fill'
           objectFit='cover'
-          className='aspect-square'
+          className='aspect-square rounded-t-lg md:rounded-l-lg'
         />
         <div className='w-16 h-16 absolute bottom-2 left-2'>
           <Image

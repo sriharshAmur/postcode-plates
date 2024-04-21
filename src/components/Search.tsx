@@ -70,7 +70,7 @@ export default function Search({ fullWidth = false }) {
 
       {error !== '' ? (
         <div className='text-red-700 bg-red-200 px-1 w-full py-1 rounded-b-lg'>{error}</div>
-      ) : isFocused ? (
+      ) : isFocused && !fullWidth ? (
         <div className='p-1 my-1 border border-gray-400 rounded-lg'>
           <div className='text-center italic pb-1'>Suggestions</div>
           <div className='overflow-auto '>
