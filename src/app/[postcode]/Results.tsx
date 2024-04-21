@@ -43,6 +43,7 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
           <div
             className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
               'bg-orange-500 text-white hover:bg-orange-500': viewType === 'list',
+              'hidden md:grid': viewType === 'grid',
             })}
             onClick={() => changeView('list')}>
             <TfiViewList size={20} />
