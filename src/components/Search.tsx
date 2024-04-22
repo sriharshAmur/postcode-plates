@@ -41,7 +41,7 @@ export default function Search({ fullWidth = false }) {
 
   return (
     <div
-      className={clsx('box-border flex flex-col w-full md:w-auto overflow-hidden md:min-w-96 max-w-[500px]', {
+      className={clsx('box-border flex flex-col w-full md:w-auto overflow-hidden mx-auto md:min-w-96 max-w-[500px]', {
         'w-[50vw]': fullWidth,
         'w-[30vw]': !fullWidth,
       })}>
