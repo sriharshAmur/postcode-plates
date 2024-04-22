@@ -28,11 +28,11 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
     <div className='flex flex-col gap-8'>
       <div className='flex items-end md:items-end justify-between pb-2 border-b border-black'>
         <div className='flex-1 hidden md:block invisible'></div>
-        <div className='flex-1 md:text-center '>
-          Showing <span className='font-bold  text-orange-500'>#10</span> Results for{' '}
+        <div className='flex-1 text-center '>
+          Showing <span className='font-semibold  text-orange-500'>10</span> Results for{' '}
           <span className='font-bold font-comfortaa text-orange-500'>{postcode}.</span>
         </div>
-        <div className='md:flex-1 flex items-center justify-end gap-1'>
+        <div className='md:flex-1 items-center justify-end gap-1 hidden md:flex'>
           <div
             className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
               'bg-orange-500 text-white hover:bg-orange-500': viewType === 'grid',
@@ -43,7 +43,6 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
           <div
             className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
               'bg-orange-500 text-white hover:bg-orange-500': viewType === 'list',
-              'hidden md:grid': viewType === 'grid',
             })}
             onClick={() => changeView('list')}>
             <TfiViewList size={20} />

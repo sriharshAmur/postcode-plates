@@ -17,7 +17,7 @@ export default function Home() {
         <p className='font-caveat text-2xl text-orange-500'>The Taste of Your Town, Delivered</p>
       </div>
       <div className='flex-1 grid place-items-center'>
-        <div className='flex flex-col gap-12 items-center md:min-w-96 max-w-[800px] w-full md:w-[50vw]'>
+        <div className='flex flex-col gap-8 md:gap-12 items-center md:min-w-96 max-w-[800px] w-full md:w-[50vw]'>
           <Suspense fallback={<div>Loading...</div>}>
             <Search fullWidth />
             <Suggestions />

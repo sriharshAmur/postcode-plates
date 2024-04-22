@@ -48,7 +48,7 @@ export default function RestaurantView({
 
       {/* Details */}
       <div
-        className={clsx('flex flex-col gap-2 p-4', {
+        className={clsx('flex flex-col gap-2 px-2 py-4 md:px-4', {
           'flex-1': view === 'list',
         })}>
         <div className='flex items-start justify-between gap-2 mb-4'>

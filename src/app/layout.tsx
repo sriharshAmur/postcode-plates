@@ -23,7 +23,7 @@ export default function RootLayout({
       lang='en'
       className={` ${caveat.variable} ${raleway.variable} ${montserrat.variable} ${josefin_sans.variable} ${comfortaa.variable} `}>
       <body className='font-montserrat'>
-        <div className='w-full h-full min-h-screen flex flex-col bg-zinc-50'>{children}</div>
+        <div className='w-full h-[100dvh] md:h-full min-h-screen flex flex-col bg-zinc-50'>{children}</div>
       </body>
     </html>
   );
