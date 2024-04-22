@@ -4,6 +4,8 @@
 
 [Inital Design](https://link.excalidraw.com/l/5C6TAP7vUVC/7mpk8r52bGC) was made on [Excalidraw](https://excalidraw.com/).
 
+This project was made using [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [React](https://reactjs.org/). It is hosted on [Vercel](https://vercel.com/).
+
 ## Getting Started
 
 ### Install Dependencies
