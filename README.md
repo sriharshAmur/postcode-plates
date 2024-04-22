@@ -39,13 +39,13 @@ npm run dev
 
 ### Nice to have's
 
-- [ ] Dark Mode
 - [x] Nice Colors
 - [x] Nice Fonts
 - [x] Nice Icons
-- [ ] Nice Animations
-- [ ] Nice Transitions and Hover Effects
+- [ ] Add loading skeletons for better UX
 - [ ] Map View
 - [ ] Filter by (Cuisine, Rating, Price, etc)
 - [ ] Make Sort By
-- [ ] Add loading skeletons for better UX
+- [ ] Nice Animations
+- [ ] Nice Transitions and Hover Effects
+- [ ] Dark Mode
