@@ -34,10 +34,12 @@ export default async function Postcode({ params }: { params: { postcode: string 
     );
 
   return (
-    <Results
-      postcode={params.postcode}
-      restaurants={restaurants}
-    />
+    <div className='pb-4'>
+      <Results
+        postcode={params.postcode}
+        restaurants={restaurants}
+      />
+    </div>
   );
 }
 
