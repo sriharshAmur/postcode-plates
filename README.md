@@ -42,7 +42,7 @@ npm run dev
 - [ ] Dark Mode
 - [x] Nice Colors
 - [x] Nice Fonts
-- [ ] Nice Icons
+- [x] Nice Icons
 - [ ] Nice Animations
 - [ ] Nice Transitions and Hover Effects
 - [ ] Map View

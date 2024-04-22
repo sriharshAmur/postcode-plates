@@ -3,7 +3,7 @@
 import { Restaurant } from '@/@types/restaurant';
 import { useState } from 'react';
 import { IoGridOutline } from 'react-icons/io5';
-import { TfiViewList } from 'react-icons/tfi';
+import { BsViewStacked } from 'react-icons/bs';
 import clsx from 'clsx';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import RestaurantView from '@/components/RestaurantView';
@@ -34,18 +34,20 @@ export default function Restaurants({ restaurants, postcode }: { restaurants: Re
         </div>
         <div className='md:flex-1 items-center justify-end gap-1 hidden md:flex'>
           <div
-            className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
+            className={clsx('grid place-items-center cursor-pointer  rounded-lg p-2', {
               'bg-orange-500 text-white hover:bg-orange-500': viewType === 'grid',
+              'hoverLbg-gray-200': viewType === 'list',
             })}
             onClick={() => changeView('grid')}>
             <IoGridOutline size={20} />
           </div>
           <div
-            className={clsx('grid place-items-center cursor-pointer hover:bg-orange-400 rounded-lg p-2', {
+            className={clsx('grid place-items-center cursor-pointer rounded-lg p-2', {
               'bg-orange-500 text-white hover:bg-orange-500': viewType === 'list',
+              'hover:bg-gray-200': viewType === 'grid',
             })}
             onClick={() => changeView('list')}>
-            <TfiViewList size={20} />
+            <BsViewStacked size={20} />
           </div>
         </div>
       </div>

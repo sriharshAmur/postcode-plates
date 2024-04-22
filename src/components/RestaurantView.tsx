@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa6';
-import { PiBowlFoodFill } from 'react-icons/pi';
+import { MdFoodBank } from 'react-icons/md';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Restaurant } from '@/@types/restaurant';
 import { ViewType } from '@/app/[postcode]/Results';
@@ -63,13 +63,14 @@ export default function RestaurantView({
         </div>
         <div className='flex items-start gap-2'>
           <div>
-            <PiBowlFoodFill size={20} />
+            <MdFoodBank size={22} />
           </div>
           <div className='font-comfortaa'>
             {restaurant.cuisines.map((cuisine, index) => (
               <span key={cuisine.name}>
                 <span
                   className={clsx('p-1 rounded', {
+                    'pl-0': index === 0,
                     'bg-purple-200 text-purple-600': cuisine.name === 'Deals',
                     'bg-green-100 text-green-600': cuisine.name === 'Collect stamps',
                     'bg-red-100 text-red-600': cuisine.name === 'Low Delivery Fee',
@@ -86,7 +87,7 @@ export default function RestaurantView({
             <FaLocationDot size={20} />
           </div>
           <div className='font-comfortaa'>
-            {restaurant.address.firstLine}, {restaurant.address.city} - {restaurant.address.postalCode}
+            {restaurant.address.firstLine}, {restaurant.address.postalCode} - {restaurant.address.city}
           </div>
         </div>
       </div>
