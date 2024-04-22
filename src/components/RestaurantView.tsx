@@ -48,7 +48,7 @@ export default function RestaurantView({
 
       {/* Details */}
       <div
-        className={clsx('flex flex-col gap-2 px-2 py-4 md:px-4', {
+        className={clsx('flex flex-col gap-3 px-2 py-4 md:px-4', {
           'flex-1': view === 'list',
         })}>
         <div className='flex items-start justify-between gap-2 mb-4'>
@@ -65,7 +65,7 @@ export default function RestaurantView({
           <div>
             <MdFoodBank size={22} />
           </div>
-          <div className='font-comfortaa'>
+          <div className='font-comfortaa leading-7'>
             {restaurant.cuisines.map((cuisine, index) => (
               <span key={cuisine.name}>
                 <span
@@ -86,7 +86,7 @@ export default function RestaurantView({
           <div className='grid place-items-center'>
             <FaLocationDot size={20} />
           </div>
-          <div className='font-comfortaa'>
+          <div className='font-comfortaa leading-7'>
             {restaurant.address.firstLine}, {restaurant.address.postalCode} - {restaurant.address.city}
           </div>
         </div>
